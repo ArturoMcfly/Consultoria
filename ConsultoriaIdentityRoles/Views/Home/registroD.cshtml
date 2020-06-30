@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "registroD";
+}
+    <link href="~/css/registroD.css" rel="stylesheet" />
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <div class="navbar-brand js-scroll-trigger">
+            <span class="icon-terminal"></span>
+
+            @Html.ActionLink("McflyCorps", "index", "Home")
+
+        </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li>
+                    <!--
+                    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>-->
+                </li>
+
+                <li class="nav-item">
+                    <div class="nav-link js-scroll-trigger">
+                        <span class="icon-user"></span>
+
+                        @Html.ActionLink("Ingresar", "loginD", "Home")
+
+                    </div>
+                    
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card card-signin flex-row my-5">
+                <div class="card-img-left d-none d-md-flex">
+                    <!-- Background image for card set in CSS! -->
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Ingresa a nuestra comunidad</h5>
+                    <form class="form-signin">
+                        <div class="form-label-group">
+                            <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
+                            <label for="inputUserame">Nombre</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+                            <label for="inputEmail">Correo electronico</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="password" id="inputPass" class="form-control" placeholder="Username" required autofocus>
+                            <label for="inputPass">Contraseña</label>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="password" id="inputPassConfir" class="form-control" placeholder="Username" required autofocus>
+                            <label for="inputPassConfir">Confirmar contraseña</label>
+                        </div>
+                        <div class="form-label-group">
+
+                            <textarea class="form-control" id="inputCom" rows="4" cols="50">
+                    
+                    </textarea>
+                            <label for="inputCom">Porque te quieres unir a la comunidad?</label>
+                        </div>
+
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Aceptar</button>
+
+                        <hr class="my-4">
+                        <!--
+                        <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Entrar con Gmail</button>
+                        <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Entrar Facebook</button>
+                        -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

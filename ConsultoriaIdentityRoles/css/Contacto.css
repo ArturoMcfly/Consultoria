@@ -1,0 +1,27 @@
+﻿body {
+    background-image: url("../img/Fon2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#mainNav {
+    background-color: #000000b2;
+    position: relative;
+}
+
+footer {
+    background-color: #000000;
+}
+
+.tableMap {
+    width: 90%;
+    text-align: center;
+    background: #0000009b;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    padding: 10px;
+    margin: 10px;
+    color: #fff;
+}
