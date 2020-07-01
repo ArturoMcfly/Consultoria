@@ -18,7 +18,7 @@
                         @Html.ActionLink("Productos", "productos", "Home")
                     </div>
                 </li>
-                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                @if (Request.IsAuthenticated && User.IsInRole("Desarrrollador"))
                 {
                     <li class="nav-item">
                         <div class="nav-link js-scroll-trigger">
