@@ -21,16 +21,7 @@
         <a class="nav-link js-scroll-trigger" href="productos.cshtml"><span class="icon-cart"></span> Productos</a>
             -->
                 </li>
-                <li class="nav-item">
-                    <div class="nav-link js-scroll-trigger">
-                        <span class="icon-coin-dollar"></span>
-
-                        @Html.ActionLink("Compras", "registroU", "Home")
-                    </div>
-                    <!--
-        <a class="nav-link js-scroll-trigger" href="CompraP.cshtml"><span class="icon-coin-dollar"></span>Compras</a>
-            -->
-                </li>
+                
                 @*
             <li class="nav-item">
                 <div class="nav-link js-scroll-trigger">
@@ -45,8 +36,16 @@
 
                 @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                 {
-                    <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
-                    <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            @Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            @Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")
+                        </div>
+                    </li>
                 }
             </ul>
             @Html.Partial("_LoginPartial")
