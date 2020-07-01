@@ -3,34 +3,75 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-
-        </th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
+<style>
+    #mainNav {
+        background-color: #000000b2;
+        position: relative;
     }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <div class="navbar-brand js-scroll-trigger">
+            <span class="icon-terminal"></span>
 
-</table>
+            @Html.ActionLink("McflyCorps", "index", "Home")
+
+        </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menú
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            <span class="icon-users"></span>
+                            @Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            <span class="icon-user-check"></span>
+                            @Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")
+                        </div>
+                    </li>
+                }
+            </ul>
+            @Html.Partial("_LoginPartial")
+            
+        </div>
+    </div>
+    </nav>
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Crear nuevo rol", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Borrar", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>

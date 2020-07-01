@@ -2,13 +2,54 @@
 @{
     ViewBag.Title = "Manage your account";
 }
+<style>
+    #mainNav {
+        background-color: #000000b2;
+        position: relative;
+    }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <div class="navbar-brand js-scroll-trigger">
+            <span class="icon-terminal"></span>
+
+            @Html.ActionLink("McflyCorps", "index", "Home")
+
+        </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            <span class="icon-users"></span>
+                            @Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            <span class="icon-user-check"></span>
+                            @Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")
+                        </div>
+                    </li>
+                }
+            </ul>
+            @Html.Partial("_LoginPartial")
+
+        </div>
+    </div>
+</nav>
 
 <h2>@ViewBag.Title.</h2>
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div class="row">
     <div class="col-md-8">
         <p>
-            @(Model.HasPassword ? Html.ActionLink("Change your password", "ChangePassword") 
+            @(Model.HasPassword ? Html.ActionLink("Change your password", "ChangePassword")
                 : Html.ActionLink("Pick a password", "SetPassword"))
         </p>
         <p>
@@ -31,29 +72,29 @@
         </p>
         @if (Model.TwoFactor)
         {
-            using (Html.BeginForm("DisableTFA", "Manage", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+            using (Html.BeginForm("DisableTFA", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
-                 @Html.AntiForgeryToken()
-                 <p>
-                     Two factor is currently enabled:
-                     <input type="submit" value="Disable" class="btn btn-default"/>
-                 </p>
+                @Html.AntiForgeryToken()
+                <p>
+                    Two factor is currently enabled:
+                    <input type="submit" value="Disable" class="btn btn-default" />
+                </p>
             }
         }
         else
         {
-            using (Html.BeginForm("EnableTFA", "Manage", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+            using (Html.BeginForm("EnableTFA", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
                 <p>
                     Two factor is currently disabled:
-                    <input type="submit" value="Enable" class="btn btn-default"/>
+                    <input type="submit" value="Enable" class="btn btn-default" />
                 </p>
             }
         }
         @if (Model.BrowserRemembered)
         {
-            using (Html.BeginForm("ForgetBrowser", "Manage", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+            using (Html.BeginForm("ForgetBrowser", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
                 <p>
@@ -64,12 +105,12 @@
         }
         else
         {
-            using (Html.BeginForm("RememberBrowser", "Manage", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+            using (Html.BeginForm("RememberBrowser", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
                 <p>
                     Browser is curently not remembered for two factor:
-                    <input type="submit" value="Remember Browser" class="btn btn-default"/>
+                    <input type="submit" value="Remember Browser" class="btn btn-default" />
                 </p>
             }
         }

@@ -18,21 +18,7 @@
                         @Html.ActionLink("Productos", "productos", "Home")
                     </div>
                 </li>
-                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
-                {
-                    <li class="nav-item">
-                        <div class="nav-link js-scroll-trigger">
-                            <span class="icon-users"></span>
-                            @Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="nav-link js-scroll-trigger">
-                            <span class="icon-user-check"></span>
-                            @Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")
-                        </div>
-                    </li>
-                }
+                
             </ul>
             @Html.Partial("_LoginPartial")
         </div>
