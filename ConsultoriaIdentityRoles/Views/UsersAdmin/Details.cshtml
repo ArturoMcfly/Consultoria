@@ -1,13 +1,53 @@
 ﻿@model IdentitySample.Models.ApplicationUser
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles";
 }
+<style>
+    #mainNav {
+        background-color: #000000b2;
+        position: relative;
+    }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <div class="navbar-brand js-scroll-trigger">
+            <span class="icon-terminal"></span>
 
-<h2>Details.</h2>
+            @Html.ActionLink("McflyCorps", "index", "Home")
+
+        </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menú
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            <span class="icon-users"></span>
+                            @Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            <span class="icon-user-check"></span>
+                            @Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")
+                        </div>
+                    </li>
+                }
+            </ul>
+            @Html.Partial("_LoginPartial")
+
+        </div>
+    </div>
+</nav>
+<h2>Detalles.</h2>
 
 <div>
-    <h4>User</h4>
+    <h4>Usurario</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -18,11 +58,11 @@
         </dd>
     </dl>
 </div>
-<h4>List of roles for this user</h4>
+<h4>Lista de roles de este usuario</h4>
 @if (ViewBag.RoleNames.Count == 0)
 {
     <hr />
-    <p>No roles found for this user.</p>
+    <p>No hay roles para este usuario.</p>
 }
 
 <table class="table">
@@ -37,8 +77,8 @@
     }
 </table>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
 </p>
 
 

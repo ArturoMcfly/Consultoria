@@ -33,6 +33,8 @@ namespace IdentitySample.Controllers
 
             return View();
         }
+        [Authorize(Roles = "Desarrrollador"), RequireHttps]
+        
         public ActionResult Comunidad()
         {
             ViewBag.Message = "Your contact page.";

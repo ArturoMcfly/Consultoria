@@ -3,11 +3,52 @@
 @{
     ViewBag.Title = "Edit";
 }
+<style>
+    #mainNav {
+        background-color: #000000b2;
+        position: relative;
+    }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <div class="navbar-brand js-scroll-trigger">
+            <span class="icon-terminal"></span>
 
-<h2>Edit.</h2>
+            @Html.ActionLink("McflyCorps", "index", "Home")
+
+        </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menú
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            <span class="icon-users"></span>
+                            @Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            <span class="icon-user-check"></span>
+                            @Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")
+                        </div>
+                    </li>
+                }
+            </ul>
+            @Html.Partial("_LoginPartial")
+
+        </div>
+    </div>
+</nav>
+<h2>Editar.</h2>
 
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
@@ -19,8 +60,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-               @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-               @Html.ValidationMessageFor(model => model.Email)
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Email)
             </div>
         </div>
         <div class="form-group">
@@ -36,14 +77,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar a la lista", "Index")
 </div>
 
 @section Scripts {
