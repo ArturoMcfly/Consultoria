@@ -37,7 +37,17 @@
                             @Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")
                         </div>
                     </li>
-                    
+
+                }
+                @if (Request.IsAuthenticated && User.IsInRole("Desarrrollador"))
+                {
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            <span class="icon-users"></span>
+                            @Html.ActionLink("Comunidad", "comunidad", "Home")
+                        </div>
+                    </li>
+
                 }
             </ul>
             @Html.Partial("_LoginPartial")
