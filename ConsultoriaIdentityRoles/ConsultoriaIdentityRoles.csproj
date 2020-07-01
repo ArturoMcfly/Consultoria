@@ -327,6 +327,7 @@
     <Content Include="img\team\1.jpg" />
     <Content Include="img\team\2.jpg" />
     <Content Include="img\team\3.jpg" />
+    <Content Include="img\usuario\Fotos_usuario\AdminArturo.jpg" />
     <Content Include="js\agency.js" />
     <Content Include="js\agency.min.js" />
     <Content Include="js\contact_me.js" />
@@ -546,7 +547,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="img\usuario\Fotos_desarrollador\" />
-    <Folder Include="img\usuario\Fotos_usuario\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
