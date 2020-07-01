@@ -127,46 +127,34 @@
         position: relative;
     }
 </style>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="../index.html"><span class="icon-terminal">McflyCorps</span></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ml-auto">
-                    <li>
-                        <!--
-                        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                                </div>
-                            </div>
-                        </form>-->
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="views/productos.html"><span class="icon-cart"></span> Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="views/CompraP.html"><span class="icon-coin-dollar"></span>Compras</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="views/loginU.html"><span class="icon-user"></span>Ingresar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="views/Waboot.html"><span class="icon-whatsapp"></span>Whatsapp</a>
-                    </li>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <div class="navbar-brand js-scroll-trigger">
+            <span class="icon-terminal"></span>
 
+            @Html.ActionLink("McflyCorps", "index", "Home")
 
-                </ul>
-            </div>
         </div>
-    </nav>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
 
+                <li class="nav-item">
+                    <div class="nav-link js-scroll-trigger">
+                        <span class="icon-cart"></span>
 
+                        @Html.ActionLink("Productos", "productos", "Home")
+                    </div>
+                </li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+
+        </div>
+    </div>
+</nav>
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-xl-9 mx-auto">
