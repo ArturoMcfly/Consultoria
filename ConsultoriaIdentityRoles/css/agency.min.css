@@ -5,21 +5,18 @@
  */body{
        overflow-x:hidden;
       font-family:'Roboto Slab',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'
-
    }
    p{
-       
        line-height:1.75
-
    }
 a {
-    color: #4caf50
+    color: #1cdde4;
 }
     a:hover {
-    color: #4caf50
+        color: #21a2a7;
     }
 .text-primary {
-    color: #4caf50 !important
+    color: #1cdde4 !important
 }
 h1,h2,h3,h4,h5,h6{
     font-weight:700;
@@ -51,11 +48,11 @@ h1,h2,h3,h4,h5,h6{
 
  }
 ::-moz-selection {
-    background: #4caf50;
+    background: #1cdde4;
     text-shadow: none
 }
 ::selection {
-    background: #4caf50;
+    background: #1cdde4;
     text-shadow: none
 }
   img::-moz-selection{
@@ -75,22 +72,21 @@ h1,h2,h3,h4,h5,h6{
     }
     .btn-xl{
         font-size:18px;
-        padding:20px 40px
+        padding:20px 40px;
 
     }
 .btn-primary {
-    background-color: #4caf50;
-    border-color: #4caf50
+    background-color: #1cdde4;
+    border-color: #1cdde4;
 }
     .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-        background-color: #4caf50 !important;
-        border-color: #4caf50 !important;
+        background-color: #1b8c90 !important;
+        border-color: #1b8c90 !important;
         color: #fff
     }
-     .btn-primary:active,.btn-primary:focus{
-         box-shadow:0 0 0 .2rem rgba(254,209,55,.5)!important
-
-     }
+    .btn-primary:active, .btn-primary:focus {
+        box-shadow: 0 0 0 .2rem rgba(20, 88, 98, 0.5) !important
+    }
      #mainNav{
          background-color:#212529
 
@@ -102,17 +98,16 @@ h1,h2,h3,h4,h5,h6{
             text-transform: uppercase;
             color: #fff;
             border: 0;
-            background-color: #4caf50;
+            background-color: #1cdde4;
             font-family: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'
         }
         #mainNav .navbar-brand {
-            color: #4caf50;
+            color: #1cdde4;
             font-family: 'Kaushan Script',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'
         }
-      #mainNav .navbar-brand.active,#mainNav .navbar-brand:active,#mainNav .navbar-brand:focus,#mainNav .navbar-brand:hover{
-          color:#fec503
-
-      }
+            #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+                color: #21a2a7;
+            }
       #mainNav .navbar-nav .nav-item .nav-link{
           font-size:90%;
           font-weight:400;
@@ -121,7 +116,7 @@ h1,h2,h3,h4,h5,h6{
           color:#fff;
           font-family:Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'}
       #mainNav .navbar-nav .nav-item .nav-link.active,#mainNav .navbar-nav .nav-item .nav-link:hover{
-          color:#4caf50
+          color:#4caf50;
 
       }
       @media (min-width:992px){
@@ -209,7 +204,7 @@ h1,h2,h3,h4,h5,h6{
          }
          .service-heading{
              margin:15px 0;
-             text-transform:none
+             text-transform:none;
 
          }
          #portfolio .portfolio-item{
@@ -225,15 +220,14 @@ h1,h2,h3,h4,h5,h6{
              cursor:pointer
 
          }
-         #portfolio .portfolio-item .portfolio-link .portfolio-hover{
-             position:absolute;
-             width:100%;
-             height:100%;
-             transition:all ease .5s;
-             opacity:0;
-             background:rgba(254,209,54,.9)
-
-         }
+            #portfolio .portfolio-item .portfolio-link .portfolio-hover {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                transition: all ease .5s;
+                opacity: 0;
+                background: rgba(21, 71, 87, 0.9)
+            }
          #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover{
              opacity:1
 
@@ -420,7 +414,7 @@ h1,h2,h3,h4,h5,h6{
                 color: #fff;
                 border: 7px solid #e9ecef;
                 border-radius: 100%;
-                background-color: #4caf50
+                background-color: #1cdde4;
             }
          .timeline>li .timeline-image h4{
              font-size:10px;
@@ -599,7 +593,7 @@ h1,h2,h3,h4,h5,h6{
 
           }
             section#contact .form-control:focus {
-                border-color: #4caf50;
+                border-color: #1cdde4;
                 box-shadow: none
             }
           section#contact ::-webkit-input-placeholder{
@@ -628,7 +622,7 @@ h1,h2,h3,h4,h5,h6{
           }
           .footer{
               padding:25px 0;
-              text-align:center
+              text-align:center;
 
           }
           .footer span.copyright{
@@ -647,7 +641,7 @@ h1,h2,h3,h4,h5,h6{
 
           }
           ul.social-buttons{
-              margin-bottom:0
+              margin-bottom:0;
 
           }
           ul.social-buttons li a{
@@ -660,9 +654,9 @@ h1,h2,h3,h4,h5,h6{
               color:#fff;
               border-radius:100%;
               outline:0;
-              background-color:#212529
+              background-color:#212529;
 
          }
             ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
-                background-color: #4caf50
+                background-color: #1cdde4;
             }
