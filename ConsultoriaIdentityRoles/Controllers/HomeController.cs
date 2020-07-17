@@ -83,6 +83,11 @@ namespace IdentitySample.Controllers
 
             return View();
         }
+        public ActionResult Compra()
+        {
+            ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
     }
 }
