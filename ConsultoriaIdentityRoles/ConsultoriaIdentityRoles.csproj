@@ -279,11 +279,13 @@
     <Content Include="css\Consultoria1.css" />
     <Content Include="css\Contacto.css" />
     <Content Include="css\Index.css" />
+    <Content Include="css\login.css" />
     <Content Include="css\loginD.css" />
     <Content Include="css\loginU.css" />
     <Content Include="css\Productos.css" />
     <Content Include="css\registroD.css" />
     <Content Include="css\registroU.css" />
+    <Content Include="css\simple-sidebar.css" />
     <Content Include="Global.asax" />
     <Content Include="img\1.jpg" />
     <Content Include="img\2.png" />
@@ -517,10 +519,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\ReunionesModelsController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
+    <Compile Include="Controllers\VentasController.cs" />
     <Compile Include="Data\ConsultoriaIdentityRolesContext.cs" />
+    <Compile Include="Data\ConsultoriaIdentityRolesPContext.cs" />
+    <Compile Include="Data\ConsultoriaIdentityRolesVContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -528,7 +534,9 @@
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Productos.cs" />
     <Compile Include="Models\ReunionesModel.cs" />
+    <Compile Include="Models\Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -541,6 +549,17 @@
     <Content Include="Views\ReunionesModels\Details.cshtml" />
     <Content Include="Views\ReunionesModels\Edit.cshtml" />
     <Content Include="Views\ReunionesModels\Index.cshtml" />
+    <Content Include="Views\Home\consul.cshtml" />
+    <Content Include="Views\Productos\Create.cshtml" />
+    <Content Include="Views\Productos\Delete.cshtml" />
+    <Content Include="Views\Productos\Details.cshtml" />
+    <Content Include="Views\Productos\Edit.cshtml" />
+    <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\Ventas\Create.cshtml" />
+    <Content Include="Views\Ventas\Delete.cshtml" />
+    <Content Include="Views\Ventas\Details.cshtml" />
+    <Content Include="Views\Ventas\Edit.cshtml" />
+    <Content Include="Views\Ventas\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

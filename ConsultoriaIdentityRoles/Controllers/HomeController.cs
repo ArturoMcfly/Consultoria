@@ -89,5 +89,11 @@ namespace IdentitySample.Controllers
 
             return View();
         }
+        public ActionResult Consul()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }
