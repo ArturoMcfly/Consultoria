@@ -520,10 +520,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\ReunionesModelsController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
     <Compile Include="Controllers\VentasController.cs" />
     <Compile Include="Data\ConsultoriaIdentityRolesPContext.cs" />
+    <Compile Include="Data\ConsultoriaIdentityRolesRMContext.cs" />
     <Compile Include="Data\ConsultoriaIdentityRolesVContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -533,6 +535,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Productos.cs" />
+    <Compile Include="Models\ReunionesModels.cs" />
     <Compile Include="Models\Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -552,6 +555,11 @@
     <Content Include="Views\Ventas\Details.cshtml" />
     <Content Include="Views\Ventas\Edit.cshtml" />
     <Content Include="Views\Ventas\Index.cshtml" />
+    <Content Include="Views\ReunionesModels\Create.cshtml" />
+    <Content Include="Views\ReunionesModels\Delete.cshtml" />
+    <Content Include="Views\ReunionesModels\Details.cshtml" />
+    <Content Include="Views\ReunionesModels\Edit.cshtml" />
+    <Content Include="Views\ReunionesModels\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
