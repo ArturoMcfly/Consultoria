@@ -63,6 +63,12 @@
                         <h5 class="card-title text-center">Ingresa a nuestra comunidad</h5>
                         @Html.ValidationSummary("", new { @class = "text-danger" })
                         <div class="form-group">
+                            @Html.LabelFor(m => m.Nombre, new { })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
                             @Html.LabelFor(m => m.Email, new { })
                             <div class="col-md-10">
                                 @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
@@ -75,9 +81,21 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            @Html.LabelFor(m => m.ConfirmPassword, new {  })
+                            @Html.LabelFor(m => m.ConfirmPassword, new { })
                             <div class="col-md-10">
                                 @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Telefono, new { })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Razon, new { })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Razon, new { @class = "form-control" })
                             </div>
                         </div>
                         <div class="form-label-group">

@@ -5,9 +5,14 @@ namespace IdentitySample.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
+
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        public string Nombre { get; set; }
+        public string Telefono { get; set; }
+
+        public string Razon { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -64,6 +69,10 @@ namespace IdentitySample.Models
 
     public class RegisterViewModel
     {
+        public string Nombre { get; set; }
+        public string Telefono { get; set; }
+
+        public string Razon { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
