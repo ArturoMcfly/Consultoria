@@ -7,6 +7,7 @@
         background-color: #000000b2;
         position: relative;
     }
+    
 </style>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
@@ -53,8 +54,35 @@
         </div>
     </div>
 </nav>
+@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+{
+    <table class="table">
+        <tr>
+            <th>
+                <h1>Controles de Administrador</h1>
+            </th>
+        </tr>
+            <tr>
+            
+           
+            <th>
+                <span class="icon-stac"></span>
+                @Html.ActionLink("Productos", "Index", "Productos")
+                <span class="icon-address-book"></span>
+                @Html.ActionLink("Reuniones ", "Index", "RolesAdmin")
+                <span class="icon-user-tie"></span>
+                @Html.ActionLink("Roles", "Index", "RolesAdmin")
+                <span class="icon-users"></span>
+                @Html.ActionLink("Usuarios", "Index", "RolesAdmin")
 
-<h2>@ViewBag.Title.</h2>
+            </th>
+        </tr>
+    </table>
+}
+
+
+
+    <h2>@ViewBag.Title.</h2>
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div class="row">
     <div class="col-md-8">
