@@ -560,6 +560,8 @@
     <Content Include="Views\ReunionesModels\Details.cshtml" />
     <Content Include="Views\ReunionesModels\Edit.cshtml" />
     <Content Include="Views\ReunionesModels\Index.cshtml" />
+    <Content Include="Views\Productos\productos.cshtml" />
+    <Content Include="Views\Productos\Compra.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

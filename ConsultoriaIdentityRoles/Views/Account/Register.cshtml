@@ -62,12 +62,13 @@
                     <div class="card-body">
                         <h5 class="card-title text-center">Ingresa a nuestra comunidad</h5>
                         @Html.ValidationSummary("", new { @class = "text-danger" })
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Nombre, new { })
-                            <div class="col-md-10">
-                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                            </div>
-                        </div>
+                        @*<div class="form-group">
+            @Html.LabelFor(m => m.Nombre, new { })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+
+            </div>
+        </div>*@
                         <div class="form-group">
                             @Html.LabelFor(m => m.Email, new { })
                             <div class="col-md-10">
@@ -86,6 +87,7 @@
                                 @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
                             </div>
                         </div>
+                        @*
                         <div class="form-group">
                             @Html.LabelFor(m => m.Telefono, new { })
                             <div class="col-md-10">
@@ -97,7 +99,7 @@
                             <div class="col-md-10">
                                 @Html.TextBoxFor(m => m.Razon, new { @class = "form-control" })
                             </div>
-                        </div>
+                        </div>*@
                         <div class="form-label-group">
                             <div class="col-md-offset-2 col-md-10">
                                 <input type="submit" class="btn btn-lg btn-primary btn-block text-uppercase" value="Registrar" />

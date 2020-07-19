@@ -1,0 +1,198 @@
+﻿@model IEnumerable<ConsultoriaIdentityRoles.Models.Productos>
+@{
+    ViewBag.Title = "productos";
+}
+
+<link href="~/css/Productos.css" rel="stylesheet" />
+<style>
+    header.masthead {
+        text-align: center;
+        color: #fff;
+        background-image: url("../img/header-bg.jpg");
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover
+    }
+
+    body {
+        background: #fff;
+    }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <div class="navbar-brand js-scroll-trigger">
+            <span class="icon-terminal"></span>
+
+            @Html.ActionLink("McflyCorps", "index", "Home")
+
+        </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+
+                <li class="nav-item">
+                    <div class="nav-link js-scroll-trigger">
+                        <span class="icon-whatsapp"></span>
+
+                        @Html.ActionLink("Contáctanos", "consultoria", "Home")
+
+                    </div>
+
+                </li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+
+        </div>
+    </div>
+</nav>
+<!-- Header -->
+<header class="masthead">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-lead-in">Bienvenido a nuestra area de productos!</div>
+            <div class="intro-heading text-uppercase">Siempre tenemos algo para ti</div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#productos">Preciona aqui para leer mas</a>
+        </div>
+    </div>
+</header>
+
+<hr>
+
+<div class="container" id="productos">
+
+    <!-- Page Heading -->
+    <h1>
+        Productos
+        <small>Escoge uno a tu talla</small>
+    </h1>
+
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="../img/productos/p2.jpg" alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#">@Html.DisplayFor(modelItem => item.Nombre)</a>
+                    </h4>
+                    <p class="card-text">
+                        <strong>
+                            @Html.DisplayNameFor(model => model.Precio)
+                        </strong>
+                        <br />
+                        $ @Html.DisplayFor(modelItem => item.Precio)
+                        <br />
+                        <strong>
+                            @Html.DisplayNameFor(model => model.descripcion)
+                        </strong>
+                        <br />
+                        @Html.DisplayFor(modelItem => item.descripcion)
+                        <br/>
+      
+                        <strong>
+                            @Html.DisplayNameFor(model => model.Caracteristicas)
+                        </strong>
+                        <br />
+                        @Html.DisplayFor(modelItem => item.Caracteristicas)
+
+                    </p>
+                    <div>
+                        @Html.ActionLink("Comprar", "Compra", "Home")
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+    <!-- /.row -->
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+    </ul>
+
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_desarrollador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Caracteristicas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaHora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Imagen)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_desarrollador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Caracteristicas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Imagen)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<!-- /.container -->

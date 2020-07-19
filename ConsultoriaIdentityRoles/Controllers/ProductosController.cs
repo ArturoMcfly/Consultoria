@@ -115,6 +115,26 @@ namespace ConsultoriaIdentityRoles.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        //vista de productos
+        public ActionResult Productos()
+        {
+            return View(db.Productos.ToList());
+        }
+        //vista de detalles y compra
+
+        public ActionResult Compra(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Productos productos = db.Productos.Find(id);
+            if (productos == null)
+            {
+                return HttpNotFound();
+            }
+            return View(productos);
+        }
 
         protected override void Dispose(bool disposing)
         {
