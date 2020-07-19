@@ -1,14 +1,12 @@
-﻿
+﻿@model ConsultoriaIdentityRoles.Models.Productos
 @{
     ViewBag.Title = "Compra";
 }
-    <style>
-        #mainNav {
-            background-color: #000000;
-            
-        }
-        
-    </style>
+<style>
+    #mainNav {
+        background-color: #000000;
+    }
+</style>
 
 
 
@@ -104,4 +102,67 @@
     </div>
     <!-- /.row -->
 
+
+</div>
+<div>
+    <h4>Productos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_desarrollador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_desarrollador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Caracteristicas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Caracteristicas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaHora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaHora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Imagen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imagen)
+        </dd>
+
+    </dl>
 </div>
