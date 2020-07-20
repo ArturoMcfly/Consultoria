@@ -121,7 +121,7 @@ namespace ConsultoriaIdentityRoles.Controllers
             return View(db.Productos.ToList());
         }
         //vista de detalles y compra
-
+        [Authorize(Roles = "Cliente"), RequireHttps]
         public ActionResult Compra(int? id)
         {
             if (id == null)

@@ -15,7 +15,38 @@ namespace IdentitySample.Controllers
         public AccountController()
         {
         }
+        public AccountController(ApplicationUserManager userManager, ApplicationRoleManager roleManager)
+        {
+            UserManager = userManager;
+            RoleManager = roleManager;
+        }
 
+        private ApplicationUserManager _userManager;
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
+
+        private ApplicationRoleManager _roleManager;
+        public ApplicationRoleManager RoleManager
+        {
+            get
+            {
+                return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+            }
+            private set
+            {
+                _roleManager = value;
+            }
+        }
+        /*
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;
@@ -33,7 +64,7 @@ namespace IdentitySample.Controllers
             {
                 _userManager = value;
             }
-        }
+        }*/
 
         //
         // GET: /Account/Login
@@ -157,12 +188,20 @@ namespace IdentitySample.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+
                     var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var role = RoleManager.FindByName("Cliente");
+                    var rolesForUser = UserManager.GetRoles(user.Id);
+                    if (!rolesForUser.Contains(role.Name))
+                    {
+                        UserManager.AddToRole(user.Id, role.Name);
+                    }
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
+                    await UserManager.SendEmailAsync(user.Id, "Confirma tu cuenta", "Por favor confirma tu cuenta mediante este link: <a href=\"" + callbackUrl + "\">link</a>");
                     ViewBag.Link = callbackUrl;
                     return View("DisplayEmail");
                 }
+                
                 AddErrors(result);
             }
 

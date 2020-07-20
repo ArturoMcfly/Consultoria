@@ -36,7 +36,7 @@
 
                 <li class="nav-item">
                     <div class="nav-link js-scroll-trigger">
-                        <span class="icon-whatsapp"></span>
+                        <span class="icon-address-book"></span>
 
                         @Html.ActionLink("Contáctanos", "consultoria", "Productos")
 
@@ -135,64 +135,6 @@
     </ul>
 
 </div>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Precio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.id_desarrollador)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Caracteristicas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaHora)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.id_desarrollador)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Caracteristicas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaHora)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Imagen)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
-
-</table>
 
 <!-- /.container -->

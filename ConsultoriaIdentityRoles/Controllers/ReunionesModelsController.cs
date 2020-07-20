@@ -116,6 +116,23 @@ namespace ConsultoriaIdentityRoles.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Consultoria()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Consultoria([Bind(Include = "Id,Nombre,Correo,Telefono,Compania,FechaHora,Razon")] ReunionesModels reunionesModels)
+        {
+            if (ModelState.IsValid)
+            {
+                db.ReunionesModels.Add(reunionesModels);
+                db.SaveChanges();
+                return RedirectToAction("Index","Home");
+            }
+            return View(reunionesModels);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
