@@ -4,6 +4,57 @@
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    #mainNav {
+        background-color: #000000b2;
+        position: relative;
+    }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <div class="navbar-brand js-scroll-trigger">
+            <span class="icon-terminal"></span>
+
+            @Html.ActionLink("McflyCorps", "index", "Home")
+
+        </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            <span class="icon-users"></span>
+                            @Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            <span class="icon-user-check"></span>
+                            @Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")
+                        </div>
+                    </li>
+                }
+                @if (Request.IsAuthenticated && User.IsInRole("Desarrrollador"))
+                {
+                    <li class="nav-item">
+                        <div class="nav-link js-scroll-trigger">
+                            <span class="icon-users"></span>
+                            @Html.ActionLink("Comunidad", "comunidad", "Home")
+                        </div>
+                    </li>
+
+                }
+            </ul>
+            @Html.Partial("_LoginPartial")
+
+        </div>
+    </div>
+</nav>
 
 <h2>Delete</h2>
 
@@ -62,7 +113,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

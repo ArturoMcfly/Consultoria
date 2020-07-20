@@ -16,12 +16,14 @@ namespace ConsultoriaIdentityRoles.Controllers
         private ConsultoriaIdentityRolesRMContext db = new ConsultoriaIdentityRolesRMContext();
 
         // GET: ReunionesModels
+        [Authorize(Roles = "Admin"), RequireHttps]
         public ActionResult Index()
         {
             return View(db.ReunionesModels.ToList());
         }
 
         // GET: ReunionesModels/Details/5
+        [Authorize(Roles = "Admin"), RequireHttps]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace ConsultoriaIdentityRoles.Controllers
         }
 
         // GET: ReunionesModels/Create
+        [Authorize(Roles = "Admin"), RequireHttps]
         public ActionResult Create()
         {
             return View();
@@ -45,6 +48,7 @@ namespace ConsultoriaIdentityRoles.Controllers
         // POST: ReunionesModels/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin"), RequireHttps]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Nombre,Correo,Telefono,Compania,FechaHora,Razon")] ReunionesModels reunionesModels)
@@ -60,6 +64,7 @@ namespace ConsultoriaIdentityRoles.Controllers
         }
 
         // GET: ReunionesModels/Edit/5
+        [Authorize(Roles = "Admin"), RequireHttps]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,6 +82,7 @@ namespace ConsultoriaIdentityRoles.Controllers
         // POST: ReunionesModels/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin"), RequireHttps]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Nombre,Correo,Telefono,Compania,FechaHora,Razon")] ReunionesModels reunionesModels)
@@ -89,8 +95,9 @@ namespace ConsultoriaIdentityRoles.Controllers
             }
             return View(reunionesModels);
         }
-
+        [Authorize(Roles = "Admin"), RequireHttps]
         // GET: ReunionesModels/Delete/5
+
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -106,7 +113,9 @@ namespace ConsultoriaIdentityRoles.Controllers
         }
 
         // POST: ReunionesModels/Delete/5
+        [Authorize(Roles = "Admin"), RequireHttps]
         [HttpPost, ActionName("Delete")]
+       
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
