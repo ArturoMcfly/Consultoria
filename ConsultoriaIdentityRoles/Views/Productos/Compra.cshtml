@@ -53,53 +53,35 @@
     <div class="row">
 
         <div class="col-md-8">
-            <img class="img-fluid" src="p1.jpg" alt="">
+            <img class="img-fluid" src="~/img/productos/p1.jpg" alt="">
         </div>
 
         <div class="col-md-4">
             <h3 class="my-3">  @Html.DisplayNameFor(model => model.descripcion)</h3>
             <p>  @Html.DisplayFor(model => model.descripcion)</p>
-            <h3 class="my-3">Project Details</h3>
+            <h3 class="my-3">@Html.DisplayNameFor(model => model.Caracteristicas)</h3>
             <ul>
-                <li>Lorem Ipsum</li>
-                <li>Dolor Sit Amet</li>
-                <li>Consectetur</li>
-                <li>Adipiscing Elit</li>
+                <li>@Html.DisplayFor(model => model.Caracteristicas)</li>
+                <li><h6>@Html.DisplayNameFor(model => model.Precio)</h6></li>
+                <li>@Html.DisplayFor(model => model.Precio)</li>
+                <li><h6>@Html.DisplayNameFor(model => model.id_desarrollador)</h6></li>
+                <li>@Html.DisplayFor(model => model.id_desarrollador)</li>
+                <li><h6>@Html.DisplayNameFor(model => model.FechaHora)</h6></li>
+                <li>@Html.DisplayFor(model => model.FechaHora)</li>
             </ul>
+            <div class="my-3">
+                <span class="icon-cart"></span>
+
+                @Html.ActionLink("Comprar", "Create", "Ventas")
+
+            </div>
         </div>
+        
 
     </div>
     <!-- /.row -->
     <!-- Related Projects Row -->
-    <h3 class="my-4">Related Projects</h3>
-
-    <div class="row">
-
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </a>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </a>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </a>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </a>
-        </div>
-
-    </div>
+    
     <!-- /.row -->
 
 

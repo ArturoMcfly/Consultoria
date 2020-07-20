@@ -77,6 +77,7 @@ namespace IdentitySample.Controllers
 
             return View();
         }
+        [Authorize( Roles= "Desarrollador"), RequireHttps]
         public ActionResult Consultoria()
         {
             ViewBag.Message = "Your contact page.";

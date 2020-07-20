@@ -77,10 +77,7 @@
             </th>
         </tr>
     </table>
-    <h2>Aplicacion para la consultoría</h2>
-    <div>
-        <iframe width="400px" height="600px" src="https://apps.powerapps.com/play/5a20ec21-3727-47ee-8654-292f53136079?tenantId=d8e658cb-faff-4c55-81f8-05ef0b9bd46c" allow="geolocation; microphone; camera" />
-    </div>
+
 }
 
 
@@ -157,3 +154,10 @@
         }
     </div>
 </div>
+@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+{
+    <h2>Aplicacion para la consultoría</h2>
+    <div>
+        <iframe width="400px" height="600px" src="https://apps.powerapps.com/play/5a20ec21-3727-47ee-8654-292f53136079?tenantId=d8e658cb-faff-4c55-81f8-05ef0b9bd46c" allow="geolocation; microphone; camera" />
+    </div>
+}

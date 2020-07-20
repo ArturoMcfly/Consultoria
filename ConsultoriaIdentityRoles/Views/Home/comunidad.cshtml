@@ -135,12 +135,12 @@
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
         <img src="../img/usuario/Fotos_usuario/AdminArturo.jpg" alt="" class="foto">
-        <div class="sidebar-heading">Nombre de usuario </div>
+        <div class="sidebar-heading">@Html.Partial("_LoginPartial") </div>
         <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action bg-light"><span class="icon-bubbles"></span>Mensajes</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light"><span class="icon-briefcase"></span>Mis publiaciones</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light"><span class="icon-users"></span>Contactos</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light"><span class="icon-github"></span> Mis links de github</a>
+            <div class="list-group-item list-group-item-action bg-light"><span class="icon-bubbles"></span>Mensajes</div>
+            <div class="list-group-item list-group-item-action bg-light"><span class="icon-briefcase"></span>@Html.ActionLink("Mis publicaciones", "productos", "Productos")</div>
+            <div class="list-group-item list-group-item-action bg-light"><span class="icon-users"></span>Contactos</div>
+            <a href="https://github.com/ArturoMcfly" class="list-group-item list-group-item-action bg-light"><span class="icon-github"></span> Mis links de github</a>
 
         </div>
     </div>
@@ -168,31 +168,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
-                        {
-                            <li class="nav-item">
-                                <div class="nav-link js-scroll-trigger">
-                                    <span class="icon-users"></span>
-                                    @Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <div class="nav-link js-scroll-trigger">
-                                    <span class="icon-user-check"></span>
-                                    @Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")
-                                </div>
-                            </li>
-                        }
-                        @if (Request.IsAuthenticated && User.IsInRole("Desarrrollador"))
-                        {
-                            <li class="nav-item">
-                                <div class="nav-link js-scroll-trigger">
-                                    <span class="icon-users"></span>
-                                    @Html.ActionLink("Comunidad", "comunidad", "Home")
-                                </div>
-                            </li>
-
-                        }
+                       
+                        
                     </ul>
                     @Html.Partial("_LoginPartial")
 
@@ -202,8 +179,13 @@
 
         <div class="container-fluid">
             <h1 class="mt-4">Noticias</h1>
-            <p>Parte aun en desarrollo</p>
-            <p>Disculpa las molestias</p>
+            @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                <h2>Aplicacion para la consultoría</h2>
+                <div>
+                    <iframe width="400" height="600" src="https://apps.powerapps.com/play/5a20ec21-3727-47ee-8654-292f53136079?tenantId=d8e658cb-faff-4c55-81f8-05ef0b9bd46c" allow="geolocation; microphone; camera" />
+                </div>
+            }
         </div>
     </div>
     <!-- /#page-content-wrapper -->

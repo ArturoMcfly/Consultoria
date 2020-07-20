@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace ConsultoriaIdentityRoles.Models
 {
@@ -11,6 +13,7 @@ namespace ConsultoriaIdentityRoles.Models
         public string Nombre { get; set; }
         public string Correo { get; set; }
         public int Telefono { get; set; }
+        [Display(Name ="Compañia")]
         public string Compania { get; set; }
         public DateTime FechaHora { get; set; }
         public string Razon { get; set; }
