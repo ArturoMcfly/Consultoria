@@ -95,5 +95,9 @@ namespace IdentitySample.Controllers
 
             return View();
         }
+        public ActionResult accesorios()
+        {
+            return View();
+        }
     }
 }
